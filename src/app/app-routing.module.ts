@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const routes: Routes = [
@@ -13,7 +14,11 @@ const routes: Routes = [
     loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule)
   },
   {
-    path: '', redirectTo: '/home', pathMatch:'full'
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: '', redirectTo: '/login', pathMatch:'full'
   },
   {
     path: '**', component: NotFoundComponent

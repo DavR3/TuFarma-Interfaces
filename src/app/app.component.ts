@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'david-web';
+
+  _displayLogin = false;
+
+  get displayMenu(){
+    return this._displayLogin;
+  }
 }

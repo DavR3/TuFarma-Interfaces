@@ -1,0 +1,46 @@
+<div class="padre">
+    <div class="hijo">
+        <mat-card class="login-card">
+            <img mat-card-image src="/assets/imagenes/word.gif" alt="git word-vision" class="">
+            <mat-card-header class="cabecera-tarjeta">
+
+                <mat-card-title>Log In</mat-card-title>
+            </mat-card-header>
+            <div class="all-inputs">
+                <form class="login-form">
+                    <mat-form-field class="input-mail">
+                        <mat-label>Enter your email</mat-label>
+                        <input matInput placeholder="micorreo@example.com" [formControl]="email" required>
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+    
+                    <mat-form-field class="input-password">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+    
+                    <mat-card-footer class="pie-tarjeta">
+                        <mat-card-content>
+                            <p>¿No tiene una cuenta?</p>
+                            <a href="#">Cree una.</a>
+                        </mat-card-content>
+                        <a href="#">¿No puede acceder a su cuenta?</a>
+                    </mat-card-footer>
+    
+                    <mat-card-content>
+                        <button mat-raised-button class="boton-log-in" color="primary">Log In</button>
+                    </mat-card-content>
+                </form>
+                
+            </div>
+
+
+
+        </mat-card>
+
+    </div>
+</div>

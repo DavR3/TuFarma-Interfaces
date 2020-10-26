@@ -1,0 +1,50 @@
+.padre {
+  
+  /*IMPORTANTE*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hijo {
+  margin-top: 5%;
+  width: 400px;
+}
+
+img{
+  width: 75%;
+  height: auto;
+  //border-radius: 50%;
+  border-bottom-right-radius: 50%;
+  padding: 5%;
+}
+
+.login-card{
+  
+  text-align: left;
+  max-width: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  max-height: 100%;
+ 
+}
+.input-mail{
+  //margin-right: 10%;
+  //margin-left: 5%;
+  min-width: 300px;
+}
+.input-password{
+  //margin: auto;
+  min-width: 300px;
+}
+
+.boton-log-in{
+  position: relative;
+  padding: 1%;
+  margin-left: 75%;
+  margin-right: auto;
+}
+.pie-tarjeta{
+  margin: 2%;
+ 
+  
+}
