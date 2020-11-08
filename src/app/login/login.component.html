@@ -7,20 +7,23 @@
                 <mat-card-title>Log In</mat-card-title>
             </mat-card-header>
             <div class="all-inputs">
-                <form class="login-form">
-                    <mat-form-field class="input-mail">
+               <!-- <form class="login-form"> -->
+                <form class="loginForm" [formGroup] = "loginForm" (ngSubmit) = "login(loginForm)">
+                    <mat-form-field class="input-mail" >
                         <mat-label>Enter your email</mat-label>
-                        <input matInput placeholder="micorreo@example.com" [formControl]="email" required>
+                        <input matInput placeholder="micorreo@example.com"  formControlName="email" required>
+                        
                         <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
                     </mat-form-field>
     
                     <mat-form-field class="input-password">
                         <mat-label>Enter your password</mat-label>
-                        <input matInput [type]="hide ? 'password' : 'text'">
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" >
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                             [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
+                        
                     </mat-form-field>
     
                     <mat-card-footer class="pie-tarjeta">
@@ -30,10 +33,13 @@
                         </mat-card-content>
                         <a href="#">¿No puede acceder a su cuenta?</a>
                     </mat-card-footer>
-    
-                    <mat-card-content>
-                        <button mat-raised-button class="boton-log-in" color="primary">Log In</button>
+                    <div *ngIf="loginError">
+                        <p class="login-error">{{loginError}}</p>
+                    </div>
+                    <mat-card-content >
+                        <button mat-raised-button type="submit" class="boton-log-in" color="primary" [disabled]="loginForm.invalid" >Log In</button>
                     </mat-card-content>
+                    
                 </form>
                 
             </div>
